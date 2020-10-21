@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #e6f2ff;
+}
+
+section {
+  margin-top: 10px;
+}
+
+footer {
+  background-color: #123321;
+  margin-top: 10px;
+  color: #fff;
+  min-height: 24vh;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+  width: 100%;
+}
+.header__logo {
+  width: 8rem;
+}
+
+.main-content {
+  width: 66%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.main-content .character-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 11rem;
+  background-color: #8af8a5;
+  padding: 8px;
+  margin: 0px;
+  box-shadow: 3px 3px 3px #123321;
+}
+.main-content .character-card:hover {
+  background-color: #79d891;
+  cursor: pointer;
+  transition: 0.2s background-color ease-in;
+}
+.main-content .character-card span {
+  margin: 4px;
+  border-bottom: 1px solid black;
+}
+
+.sidebar {
+  width: 33%;
+  border: 1px solid red;
+  padding: 10px;
+}
+.sidebar .parameters {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar .parameters label {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+.sidebar .parameters label input {
+  min-height: 20px;
+  font-size: 1.1rem;
+}
+.sidebar .parameters label select {
+  font-size: 1.2rem;
+  padding: 4px;
+}
+.sidebar .parameters__gender-wrapper {
+  display: flex;
+  align-items: center;
+}
+.sidebar .parameters__button {
+  font-size: 1.3rem;
+}
+
+.additional-content .question {
+  background-color: #c3fbff;
+  display: block;
+  padding: 10px;
+  width: 100%;
+  margin: 0 auto;
+}
+.additional-content .question__heading {
+  text-align: center;
+}
+.additional-content .question__answers {
+  text-align: center;
+}
+.additional-content .answer-icon {
+  max-width: 6rem;
+}
+
+.footer-item {
+  max-width: 30%;
+  color: #fff;
+}
+.footer-item a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-item .useful-links {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin: 1rem;
+}
+.footer-item .useful-links a {
+  margin-top: 5px;
+}
+
+/*# sourceMappingURL=/Practice%20project.e31bb0bc.css.map */
