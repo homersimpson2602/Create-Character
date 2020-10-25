@@ -22,36 +22,21 @@
 
   <section>
     <div class="container">
-      <div class="main-content">
-        <div class="character-card">
-          <img src="/logo.cecc779a.png" alt="">
-          <h3 class="character-card__name">Имя</h3>
-          <span>Класс</span>
-          <span>Возраст</span>
-          <span>Пол</span>
+      <div class="main-content" data-type="main-content">
+        <div id="welcome-frame" class="welcome-frame">
+          <h2>Создай персонажа или собери целый отряд из 6 участников</h2>
         </div>
-        <div class="character-card">
-          <img src="/logo.cecc779a.png" alt="">
-          <h3 class="character-card__name">Имя</h3>
-          <span>Класс</span>
-          <span>Возраст</span>
-          <span>Пол</span>
-        </div>
-        <div class="character-card">
-          <img src="/logo.cecc779a.png" alt="">
-          <h3 class="character-card__name">Имя</h3>
-          <span>Класс</span>
-          <span>Возраст</span>
-          <span>Пол</span>
-        </div>
-
       </div>
       <div class="sidebar">
         <h2>Выбери параметры своего персонажа</h2>
         <form action="" class="parameters">
-          <label for="">Имя<input type="text" placeholder="Введите имя"></label>
+          <label for="">Имя
+            <span id="name-alert" class="validate-alert">Дай персонажу имя</span>
+            <span id="name-length-alert" class="validate-alert">От 3 до 13 символов</span>
+            <input type="text" placeholder="Арагорн" data-type="name">
+          </label>
           <label for="">Класс
-            <select name="class" id="">
+            <select name="class" id="" data-type="class">
               <option value="warrior">Воин</option>
               <option value="druid">Маг</option>
               <option value="druid">Друид</option>
@@ -59,42 +44,63 @@
           </label>
           <label for="">Пол
             <div class="parameters__gender-wrapper">
-              <input type="radio" name="gender" value="male">М
-              <input type="radio" name="gender" value="female">Ж
+              <input type="radio" name="gender" checked="true" value="male" data-type="male">М
+              <input type="radio" name="gender" value="female" data-type="female">Ж
             </div>
 
           </label>
-          <label for="">Возраст<input type="number"></label>
-          <label for=""><button id="create-button" class="parameters__button">Создать</button></label>
+          <label for="">Возраст
+            <span id="age-alert" class="validate-alert">Сколько персонажу лет?</span>
+            <input class="age" type="number" placeholder="20" max="999" min="14" data-type="age">
+          </label>
+          <label for="">
+            <div id="create-button" class="parameters__button">Создать</div>
+          </label>
         </form>
       </div>
     </div>
   </section>
   <section class="additional-content">
     <div class="container">
-      <div class="question">
-        <h3 class="question__heading">Ответьте на дополнительный вопрос, чтобы разблокировать
+      <div id="question" class="question">
+        <h3 class="question__heading">Ответьте на вопрос, чтобы разблокировать
           секретный класс</h3> 
+        <span class="question__text">Что было раньше яйцо или курица?</span>
         <div class="question__answers">
-          <span>Что было раньше яйцо или курица?</span>
-          <span>
-            Яйцо <img class="answer-icon" src="/egg-solid.e64feb85.svg" alt="egg">
-          </span>
-          <span class="answer-icon">
-            Курица <img class="answer-icon" src="/the-red-yeti-brands.b4e0966f.svg" alt="">
-          </span>
+          <div id="egg" class="answer-item" data-egg="">
+            <img src="/egg.a55ffe02.jpg" alt="" data-egg="">
+            <span data-egg="">Яйцо</span>
+          </div>
+          <span class="or"><strong>или</strong></span>
+          <div id="hen" class="answer-item">
+            <img src="/hen.68e6e614.jpg" alt="">
+            <span>Курица</span>
+          </div>
         </div>
+        
+        
+        
       </div>
-
-
     </div>
   </section>
   <footer>
     <div class="container">
+      <div class="footer-item-wrapper">
+
+      </div>
+      <div class="footer-item">
+        <div class="useful-links">
+          <a href="https://t.me/yuri_smi" target="_blank">Telegram</a>
+        </div>
+      </div>
       <div class="footer-item">
         <div class="useful-links">
           <a href="https://github.com/homersimpson2602" target="_blank">GitHub</a>
-          <a href="https://t.me/yuri_smi" target="_blank">Telegram</a>
+        </div>
+      </div>
+      <div class="footer-item">
+        <div class="useful-links">
+          <a href="/info.html" target="_blank">О проекте</a>
         </div>
       </div>
 
