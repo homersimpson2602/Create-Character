@@ -710,6 +710,22 @@ var _path = require("path");
 
 require("./styles.scss");
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -751,7 +767,7 @@ var Character = /*#__PURE__*/function () {
       if (this.gender === "мужчина") {
         return "https://dvqlxo2m2q99q.cloudfront.net/000_clients/75782/page/h800-75782hau958iD.png";
       } else {
-        return "https://www.pngitem.com/pimgs/m/14-146143_cartoon-characters-girl-photo-png-cartoon-characters-png.png";
+        return "https://c0.klipartz.com/pngpicture/384/759/gratis-png-asuna-kirito-anime-femenino-chibi-asuna.png";
       }
     }
   }, {
@@ -779,7 +795,33 @@ var Character = /*#__PURE__*/function () {
   }]);
 
   return Character;
-}(); // Проверяем введённые параметры
+}(); // класс-наследник 
+
+
+var Paladin = /*#__PURE__*/function (_Character) {
+  _inherits(Paladin, _Character);
+
+  var _super = _createSuper(Paladin);
+
+  function Paladin(options) {
+    var _this;
+
+    _classCallCheck(this, Paladin);
+
+    _this = _super.call(this, options);
+    _this.spec = "Свет";
+    return _this;
+  }
+
+  _createClass(Paladin, [{
+    key: "classColor",
+    get: function get() {
+      return "#f48cba";
+    }
+  }]);
+
+  return Paladin;
+}(Character); // Проверяем введённые параметры
 
 
 function checkParameters(params) {
@@ -818,14 +860,30 @@ function renderCard(parameters) {
 
 function createCard() {
   if (cardsCount < 6) {
-    var charParameters = new Character(getParameters());
+    var charParameters = "";
+
+    if (getParameters().class === "Паладин") {
+      charParameters = new Paladin(getParameters());
+    } else {
+      charParameters = new Character(getParameters());
+    }
 
     if (checkParameters(charParameters)) {
       renderCard(charParameters);
       cardsCount++;
     }
   } else {
-    console.log("Можно создать не более 6 персонажей");
+    var $pirWrap = document.querySelector("#pir-wrap");
+    var $partyIsReady = document.createElement("div");
+    console.log($partyIsReady.innerHTML);
+
+    while ($pirWrap.firstChild) {
+      $pirWrap.removeChild($pirWrap.firstChild);
+    }
+
+    $partyIsReady.innerHTML = "<p><strong>Отряд из 6 персонажей полностью укомплектован!</strong></p>";
+    $partyIsReady.classList.add("party-is-ready");
+    $pirWrap.appendChild($partyIsReady);
   }
 }
 
@@ -918,9 +976,7 @@ function renderProcessing(ev) {
 }
 
 $egg.addEventListener("click", renderProcessing);
-$hen.addEventListener("click", renderProcessing); // renderProcessing()
-// renderReject();
-// renderAnswer()
+$hen.addEventListener("click", renderProcessing);
 },{"path":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/path-browserify/index.js","./styles.scss":"styles.scss"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -949,7 +1005,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62876" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62766" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

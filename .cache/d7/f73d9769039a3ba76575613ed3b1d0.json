@@ -1,1 +1,1 @@
-{"id":"img/welcome.jpg","dependencies":[],"generated":{"js":"module.exports = \"/ef0f8524e03a90593cca55f38559beca.jpg\";"},"sourceMaps":null,"error":null,"hash":"5c8c6bb1268b20bebfe3029b5ca9461e","cacheData":{"env":{}}}
+{"id":"img/welcome.jpg","dependencies":[{"name":"C:\\Users\\Yuri\\Desktop\\programming practice\\Practice project\\package.json","includedInParent":true,"mtime":1603736529002}],"generated":{"js":"module.exports = \"/ef0f8524e03a90593cca55f38559beca.jpg\";"},"sourceMaps":null,"error":null,"hash":"5c8c6bb1268b20bebfe3029b5ca9461e","cacheData":{"env":{}}}

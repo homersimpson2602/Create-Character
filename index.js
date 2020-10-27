@@ -37,7 +37,7 @@ class Character {
     if (this.gender === "мужчина") {
       return "https://dvqlxo2m2q99q.cloudfront.net/000_clients/75782/page/h800-75782hau958iD.png"
     } else {
-      return "https://www.pngitem.com/pimgs/m/14-146143_cartoon-characters-girl-photo-png-cartoon-characters-png.png"
+      return "https://c0.klipartz.com/pngpicture/384/759/gratis-png-asuna-kirito-anime-femenino-chibi-asuna.png"
     }
   }
 
@@ -60,7 +60,17 @@ class Character {
   }
 }
 
+// класс-наследник 
+class Paladin extends Character {
+  constructor(options) {
+    super(options)
+    this.spec = "Свет"
+  }
 
+  get classColor() {
+    return "#f48cba"
+  }
+}
 
 // Проверяем введённые параметры
 function checkParameters(params) {
@@ -113,14 +123,27 @@ function renderCard(parameters) {
 // создание карточку на странице 
 function createCard() {
   if (cardsCount < 6 ) {
-    const charParameters = new Character(getParameters())
+    let charParameters = ""
+    if (getParameters().class === "Паладин") {
+      charParameters = new Paladin(getParameters())
+    } else {
+      charParameters = new Character(getParameters())
+    }
     if (checkParameters(charParameters)) {
       renderCard(charParameters);
       cardsCount++;
     }
       
   } else {
-    console.log("Можно создать не более 6 персонажей")
+    const $pirWrap = document.querySelector("#pir-wrap")
+    const $partyIsReady = document.createElement("div")
+    console.log($partyIsReady.innerHTML)
+    while ($pirWrap.firstChild) {
+      $pirWrap.removeChild($pirWrap.firstChild)
+    }
+    $partyIsReady.innerHTML = "<p><strong>Отряд из 6 персонажей полностью укомплектован!</strong></p>"
+    $partyIsReady.classList.add("party-is-ready")
+    $pirWrap.appendChild($partyIsReady)
   }
   
 }
@@ -242,10 +265,3 @@ function renderProcessing(ev) {
 
 $egg.addEventListener("click", renderProcessing)
 $hen.addEventListener("click", renderProcessing)
-
-
-// renderProcessing()
-
-// renderReject();
-
-// renderAnswer() 

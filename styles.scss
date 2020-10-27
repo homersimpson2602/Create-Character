@@ -94,6 +94,7 @@ footer {
       max-width: 200px;
       max-height: 200px;
       border-radius: 6px;
+      background-color: red;
     }
 
     &:hover {
@@ -164,6 +165,7 @@ footer {
         padding: 6px;
         border-radius: 6px;
         border:none;
+        cursor: pointer;
       }
 
       .age {
@@ -194,6 +196,10 @@ footer {
     }
   }
   
+  .party-is-ready {
+    text-align:  center;
+    font-size: 1.2rem;
+  }
 
 }
 
@@ -226,6 +232,7 @@ footer {
       justify-content: space-evenly;
 
       .answer-item {
+        cursor: pointer;
         border-radius: 6px;
         margin: 10px;
         padding: 10px;
@@ -298,6 +305,14 @@ footer {
 }
 
 
+.footer-item-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  
+}
+
 .footer-item {
   max-width: 30%;
   color: #fff;
@@ -305,6 +320,10 @@ footer {
   a {
     color: #fff;
     text-decoration: none;
+    
+    &:hover {
+      color: #b1f3ff;
+    }
   }
 
   .useful-links {
@@ -318,11 +337,6 @@ footer {
     }
   }
 }
-
-
-// ===========================================
-// Стили для инфы
-// ===========================================
 
 
 

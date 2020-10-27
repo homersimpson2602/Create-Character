@@ -81,6 +81,7 @@ footer .container {
   max-width: 200px;
   max-height: 200px;
   border-radius: 6px;
+  background-color: red;
 }
 .main-content .character-card:hover {
   background-color: #79d891;
@@ -140,6 +141,7 @@ footer .container {
   padding: 6px;
   border-radius: 6px;
   border: none;
+  cursor: pointer;
 }
 .sidebar .parameters label .age {
   width: 20%;
@@ -160,6 +162,10 @@ footer .container {
   color: #fff;
   transition: 0.2s background-color ease-in;
   transition: 0.2s color ease-in;
+}
+.sidebar .party-is-ready {
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 .additional-content {
@@ -188,6 +194,7 @@ footer .container {
   justify-content: space-evenly;
 }
 .additional-content .question__answers .answer-item {
+  cursor: pointer;
   border-radius: 6px;
   margin: 10px;
   padding: 10px;
@@ -245,6 +252,13 @@ footer .container {
   font-size: 2rem;
 }
 
+.footer-item-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
 .footer-item {
   max-width: 30%;
   color: #fff;
@@ -252,6 +266,9 @@ footer .container {
 .footer-item a {
   color: #fff;
   text-decoration: none;
+}
+.footer-item a:hover {
+  color: #b1f3ff;
 }
 .footer-item .useful-links {
   display: flex;
