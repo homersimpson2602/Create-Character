@@ -183,14 +183,13 @@ footer {
       border: 1px solid #123321;
       border-radius: 6px;
       padding: 6px;
+      transition: all .2s ease;
       
       
       &:hover {
         cursor: pointer;
         background-color: #123321;
         color: #fff;
-        transition: .2s background-color ease-in;
-        transition: .2s color ease-in;
 
       }
     }
@@ -241,6 +240,11 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+          transform: translateY(-18px);
+        }
       }
 
       img {
